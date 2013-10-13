@@ -30,7 +30,7 @@ header post = B.intercalate "\n" [ "---"
                                  ]
 
 formatFile :: Post -> B.ByteString
-formatFile p = header p <> "\n" <> postbody p
+formatFile p = header p <> "\n\n" <> postbody p
 
 letters = ['a'..'z'] <> ['A'..'Z'] <> ['0'..'9']
 
