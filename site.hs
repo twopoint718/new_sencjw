@@ -2,6 +2,8 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Data.Maybe (fromMaybe)
+import qualified Data.Map as M
 
 
 --------------------------------------------------------------------------------
@@ -11,16 +13,27 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
+    -- "On Beauty" uses reveal.js which needs a bunch of subdirs
+    match "talks/**" $ do
+        route   idRoute
+        compile copyFileCompiler
+
     match "css/*" $ do
         route   idRoute
         compile compressCssCompiler
 
-    match (fromList ["about.rst", "contact.markdown"]) $ do
+    -- individual "pages"
+    match (fromList [ "contact.markdown"
+                    , "talks.markdown"
+                    , "the_square_root_of_christmas.markdown"
+                    , "transparent_web.markdown"
+                    ]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
+    -- blog posts
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
@@ -48,7 +61,7 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
+                    listField "posts" postCtx (return $ take 5 posts) `mappend`
                     constField "title" "Home"                `mappend`
                     defaultContext
 
@@ -61,7 +74,13 @@ main = hakyll $ do
 
 
 --------------------------------------------------------------------------------
+titleCtx :: Context a
+titleCtx = field "title" $ \item -> do
+    metadata <- getMetadata (itemIdentifier item)
+    return $ fromMaybe "No title" $ M.lookup "title" metadata
+
 postCtx :: Context String
 postCtx =
+    titleCtx                     `mappend`
     dateField "date" "%B %e, %Y" `mappend`
     defaultContext
