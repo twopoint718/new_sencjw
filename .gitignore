@@ -1,9 +1,11 @@
-.cabal-sandbox
-*.o
+*.chi
+*.chs.h
 *.hi
+*.o
+.cabal-sandbox
 _cache
 _site
-posts.yaml
-converter.rb
 convert
+converter.rb
+posts.yaml
 site
