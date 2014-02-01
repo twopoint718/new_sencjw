@@ -26,6 +26,7 @@ main = hakyll $ do
     match (fromList [ "contact.markdown"
                     , "interviews.markdown"
                     , "talks.markdown"
+                    , "writings.markdown"
                     , "the_square_root_of_christmas.markdown"
                     , "transparent_web.markdown"
                     ]) $ do
