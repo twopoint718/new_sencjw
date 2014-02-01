@@ -24,6 +24,7 @@ main = hakyll $ do
 
     -- individual "pages"
     match (fromList [ "contact.markdown"
+                    , "interviews.markdown"
                     , "talks.markdown"
                     , "the_square_root_of_christmas.markdown"
                     , "transparent_web.markdown"
