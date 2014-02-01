@@ -55,6 +55,11 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
 
+    -- old blog support
+    -- links like /blog.html#2013-10-03
+    match "blog.html" $ do
+        route idRoute
+        compile copyFileCompiler
 
     match "index.html" $ do
         route idRoute
