@@ -2,6 +2,4 @@
 title: Maine
 ---
 
-<div class="gallery"><a href="img/DSC-6981-SMALL.jpg"><img
-  alt="Maine Seashore"
-  src="img/DSC-6981-SMALL-1024x680.jpg"></a></div>
+![Maine Seashore](/images/DSC-6981-SMALL.jpg)
