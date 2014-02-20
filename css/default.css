@@ -24,10 +24,11 @@ a {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 3em;
   font-family: Futura, Helvetica, sans-serif;
   font-weight: normal;
   color: #025373;
+  line-height: 1.1em;
 }
 
 h2 {
@@ -67,6 +68,10 @@ nav li:last-child {
 main {
   width: 760px;
   float: left;
+}
+
+article img {
+  width: 760px;
 }
 
 article header {
