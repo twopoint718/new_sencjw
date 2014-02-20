@@ -9,3 +9,4 @@ convert
 converter.rb
 posts.yaml
 site
+cabal.sandbox.config
