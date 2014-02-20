@@ -2,6 +2,8 @@
 
 ## March 5th is the Square Root of Christmas.
 
+![The Sqrt(xmas) logo](/images/sqrtxmas.png)
+
 I just wanted to make the announcement, if anyone happened to be
 unaware. The reason for the holiday, if you haven’t guessed already, is
 because sqrt(1225) = 35. Translating those numbers into calendar dates
