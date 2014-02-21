@@ -5,7 +5,7 @@
  */
 
 body {
-  font-family: Palatino, serif;
+  font-family: Georgia, serif;
   font-size: 18px;
   line-height: 1.4em;
   background: url("/images/grey.png") top left repeat;
@@ -21,6 +21,26 @@ a {
  color: #c76d06;
  text-decoration: none;
  border-bottom: 1px dashed #c76d06;
+}
+
+pre {
+  background: #eee;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+pre code {
+  font-family: Monaco, monospace;
+  font-size: 12pt;
+}
+
+p code {
+  font-family: Monaco, monospace;
+  font-size: 11pt;
+  background: #eee;
+  padding: 1px;
+  border: darkgray solid 1px;
+  border-radius: 5px;
 }
 
 h1 {
@@ -40,6 +60,7 @@ nav {
   width: 180px;
   margin-right: 20px;
   float: left;
+  font-family: Futura, Helvetica, sans-serif;
 }
 
 nav a {
