@@ -20,8 +20,8 @@ And here's a nude photo (showing how one would be implemented):
 
 But as far as nand2tetris is concerned, you can just assume that
 the above is a fact of life. You have a nand tree. So what do you
-do? well you start on an adventure where you define Not then And
-then Nor and, well you get the idea. Soon you find that you have a
+do? well you start on an adventure where you define *Not* then *And*
+then *Nor* and, well you get the idea. Soon you find that you have a
 working [ALU](https://en.wikipedia.org/wiki/Arithmetic_logic_unit).
 
 I'm currently on the cusp of making the hardware to software jump.
@@ -37,8 +37,11 @@ machine code, and so on. It goes all the way back to that humble
 nand gate that you started out with.
 
 I hope to post some updates as I progress through the course,
-but the quickest way is to check my commits over on my
-[n2t](https://github.com/twopoint718/n2t) github project.
+~~but the quickest way is to check my commits over on my n2t
+github project.~~
+
+*Edit: sorry to say this, but I've taken down that repo since it conflicts
+with the wishes of the authors of the course.*
 
 As a slight digression, but surely belonging here, this has
 been something of a summer-o-hardware for me. I started reading

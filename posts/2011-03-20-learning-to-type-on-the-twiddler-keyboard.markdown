@@ -24,44 +24,46 @@ Either use, of course, assumes that I can type on the crazy thing. I'm one of th
 
 To deal with steps 2 and 3 on the twiddler, I wrote this short python script that pulls words out out /usr/share/dict/words that can be typed without any chord (open), using the first chord key (1st or "L"), and finally the second chord key (2nd or "M"). I don't have the third chord key on here because using just the first and second is sufficient for all letters. Here's the script:
 
-    import random
+```python
+import random
 
-    def all_from(target_list, input_list):
-        for c in input_list:
-            if not c in target_list:
-                return False
-        return True
+def all_from(target_list, input_list):
+    for c in input_list:
+        if not c in target_list:
+            return False
+    return True
 
-    def first_set(input_word):
-        return all_from("abcdefghABCDEFGH", input_word)
+def first_set(input_word):
+    return all_from("abcdefghABCDEFGH", input_word)
 
-    def second_set(input_word):
-        return all_from("ijklmnopqIJKLMNOPQ", input_word)
+def second_set(input_word):
+    return all_from("ijklmnopqIJKLMNOPQ", input_word)
 
-    def third_set(input_word):
-        return all_from("rstuvwxyzRSTUVWXYZ", input_word)
+def third_set(input_word):
+    return all_from("rstuvwxyzRSTUVWXYZ", input_word)
 
-    def fourth_set(input_word):
-        return all_from(".,;'\"?!-", input_word)
+def fourth_set(input_word):
+    return all_from(".,;'\"?!-", input_word)
 
-    def search_words(words, key_set=first_set):
-        out = []
-        for word in words:
-            if key_set(word) and len(word) > 1:
-                out.append(word)
-        return out
+def search_words(words, key_set=first_set):
+    out = []
+    for word in words:
+        if key_set(word) and len(word) > 1:
+            out.append(word)
+    return out
 
-    if __name__ == "__main__":
-        get_words = 10
-        fname = "/usr/share/dict/words"
-        wordlist = open(fname, "r").read().split("\n")
+if __name__ == "__main__":
+    get_words = 10
+    fname = "/usr/share/dict/words"
+    wordlist = open(fname, "r").read().split("\n")
 
-        first = search_words(wordlist, first_set)
-        second = search_words(wordlist, second_set)
-        third = search_words(wordlist, third_set)
-        #fourth = search_words(wordlist, fourth_set) # need wordlist w/ punct.
+    first = search_words(wordlist, first_set)
+    second = search_words(wordlist, second_set)
+    third = search_words(wordlist, third_set)
+    #fourth = search_words(wordlist, fourth_set) # need wordlist w/ punct.
 
-        print "open: ", " ".join(random.sample(first, get_words))
-        print "1st:  ", " ".join(random.sample(second, get_words))
-        print "2nd:  ", " ".join(random.sample(third, get_words))
-        #print "3rd:  ", " ".join(random.sample(fourth, get_words))
+    print "open: ", " ".join(random.sample(first, get_words))
+    print "1st:  ", " ".join(random.sample(second, get_words))
+    print "2nd:  ", " ".join(random.sample(third, get_words))
+    #print "3rd:  ", " ".join(random.sample(fourth, get_words))
+```
