@@ -151,8 +151,7 @@ surrounding it is rather elaborate. On the [Haskell
 Cast #1](https://www.youtube.com/watch?v=D6sva6hGJ-s),
 Edward Kmett goes into the details of the lens library.
 A few "[lenses are the coalgebras for the costate
-comonad](http://patternsinfp.wordpress.com/2011/01/31/lenses-are-the
--coalgebras-for-the-costate-comonad/)"s are thrown around and
+comonad](http://patternsinfp.wordpress.com/2011/01/31/lenses-are-the-coalgebras-for-the-costate-comonad/)"s are thrown around and
 there's generally a lot sailing over my head.
 
 On iota of wisdom that I pulled down from the stratosphere was that
