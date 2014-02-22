@@ -1,0 +1,10 @@
+---
+title: ChiHack
+---
+
+As I continue my leisurely foray into the world of Haskell, I have
+come upon a bivouac of Haskellers near Chicago this weekend. Myself
+and a co-worker from the office will be attending the first-ever
+[ChiHack](https://plus.google.com/events/cc4njkf8kh5aho6soboisv6c7rc).
+Maybe I can get someone to explain
+[Backpack](http://www.mpi-sws.org/~skilpat/backpack/) to me.
