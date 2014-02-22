@@ -7,7 +7,4 @@ build: site
 	./site build
 
 publish: build
-	cd _site
-	git add -A && git commit -m 'site update'
-	git push origin master
-	cd ..
+	cd _site ; git add -A ; git commit -m 'site update' ; git push origin master
