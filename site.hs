@@ -58,6 +58,12 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     -- old blog support
+
+    -- Github thingy for making sencjw.com work
+    match "CNAME" $ do
+        route idRoute
+        compile copyFileCompiler
+
     -- links like /blog.html#2013-10-03
     match "blog.html" $ do
         route idRoute
