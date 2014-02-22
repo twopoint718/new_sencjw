@@ -27,11 +27,20 @@ function make_person(phone, first, last) {...}
 ```
 
 If you encountered a wild `make_person`, you'd have to know which
-definition was the one that was used. The point is it really
-doesn't matter that a person's attributes are listed in that order.
-Any order is fine. But you've, implicitly, introduced a strict
+definition was the one that was used. The point is it really doesn't
+matter that a person's attributes are listed in that order.  Any
+order is fine. But you've, implicitly, introduced a strict
 order-dependence here. Passing in a map/object/hash fixes this
-issue:
+issue[^well_actually]:
+
+[^well_actually]: Well, *almost*. The ideal thing would be a typed
+record of some sort so that the function's access would be guaranteed
+to be safe. If this weren't the case then you'd have lost the safety
+that parameters give you. With parameters, it is instantly obvious
+if there's one missing, the call is simply *wrong*. Likewise with
+typed records, accessing a field that doesn't exist would be a
+compile-time error. In Ruby-style hash access, you'd just get a `nil`
+for any missing field/value.
 
 ```javascript
 function make_person(opts) {
