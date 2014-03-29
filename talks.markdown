@@ -7,9 +7,12 @@ love to chat. [Drop me a line](/contact.html).
 Most items are in PDF format.
 
  * [AngularJS](/talks/angularjs.pdf) - MadJS meetup
- * [From Ruby to Haskell Workshop](https://www.fpcomplete.com/user/twopoint718/from-ruby-to-haskell-workshop) - Twin Cities Code Camp
+ * [From Ruby to Haskell Workshop](https://www.fpcomplete.com/user/twopoint718/from-ruby-to-haskell-workshop)
+   and [slides](/talks/ruby_to_haskell.pdf) - Twin Cities Code Camp
  * [Functional Programming](/talks/functional_programming.pdf) - Bendyworks internal conference
+   and [Mad-Railers](http://www.meetup.com/Mad-Railers/events/155553262/)
  * [Haskell Ecosystem, The](/talks/the_haskell_ecosystem.pdf) - Twin Cities Code Camp (with Erik Rantapaa)
+ * [JS is for Functions](/talks/js_is_for_functions.pdf) - Bendyworks internal conference
  * [Let's Build a Particle Accelerator](/talks/accelerators.pdf) - Bendyworks internal conference
  * [On Beauty](/talks/on_beauty.html) - Bendyworks internal conference
  * [Once Upon a Time at the MIT AI Lab](/talks/once_upon_a_time_at_mit_ai_lab.pdf) - Bendyworks internal conference
