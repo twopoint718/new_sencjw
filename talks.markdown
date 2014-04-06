@@ -11,6 +11,7 @@ Most items are in PDF format.
    and [slides](/talks/ruby_to_haskell.pdf) - Twin Cities Code Camp
  * [Functional Programming](/talks/functional_programming.pdf) - Bendyworks internal conference
    and [Mad-Railers](http://www.meetup.com/Mad-Railers/events/155553262/)
+ * [Hands-on Haskell 101](/talks/hands_on_haskell_101.pdf) - Twin Cities Code Camp
  * [Haskell Ecosystem, The](/talks/the_haskell_ecosystem.pdf) - Twin Cities Code Camp (with Erik Rantapaa)
  * [JS is for Functions](/talks/js_is_for_functions.pdf) - Bendyworks internal conference
  * [Let's Build a Particle Accelerator](/talks/accelerators.pdf) - Bendyworks internal conference
