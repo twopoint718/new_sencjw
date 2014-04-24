@@ -59,6 +59,11 @@ main = hakyll $ do
 
     -- old blog support
 
+    -- Public key file
+    match "6D7735C5.asc" $ do
+        route idRoute
+        compile copyFileCompiler
+
     -- Github thingy for making sencjw.com work
     match "CNAME" $ do
         route idRoute
