@@ -66,6 +66,14 @@ main = hakyll $ do
                 loadAllSnapshots "posts/*" "content"
             renderAtom sencjwFeedConfiguration feedCtx posts
 
+    create ["feed.rss"] $ do
+        route idRoute
+        compile $ do
+            let feedCtx = postCtx `mappend` bodyField "description"
+            posts <- fmap (take 10) . recentFirst =<<
+                loadAllSnapshots "posts/*" "content"
+            renderRss sencjwFeedConfiguration feedCtx posts
+
     -- old blog support
 
     -- Public key file
