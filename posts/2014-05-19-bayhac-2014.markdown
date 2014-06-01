@@ -1,0 +1,222 @@
+---
+title: BayHac2014
+---
+
+I'm making my way back from [BayHac
+2014](http://www.haskell.org/haskellwiki/BayHac2014) as I write this but I
+wanted to put down a few thoughts while they're still fresh.
+
+## Friday
+
+The hackathon started out with a talk on Pipes by Gabriel Gonzalez and then
+one on Free Monads by Dan Piponi. Both were excellent. And *excellent* here
+means that I think they were both the most lucid explanations of their
+respective topic that I've yet seen.
+
+Gabriel's talk really helped to solidify my understanding of where pipes sit
+relative to [conduit](http://hackage.haskell.org/package/conduit-1.0.15), the
+other streaming-data library that I'm familiar with. The emphasis in the pipes
+talk was on the intuition behind the
+[`ListT`](http://hackage.haskell.org/package/pipes-4.1.2/docs/Pipes.html#t:ListT)
+type and the
+[`yield`](http://hackage.haskell.org/package/pipes-4.1.2/docs/Pipes.html#t:yield)
+and
+[`await`](http://hackage.haskell.org/package/pipes-4.1.2/docs/Pipes.html#t:await)
+functions.
+
+Dan Piponi spoke on free monads, [Free, but not as in beer or
+speech](https://docs.google.com/file/d/0B51SFgxqMDS-NDBOX0ZDdW52dEE/edit)
+([video](https://plus.google.com/u/0/events/cu5t5s2g14t4fqmapft5bcatqeg)), by
+first starting with an algebraic structure called a *magma*, which is simply a
+single, closed binary operation on a set:
+
+~~~haskell
+class Magma where
+    o :: a -> a -> a
+~~~
+
+Next he suggested the idea of the "least special magma." We want to capture
+the idea that we can do this binary operation, and that we have things that
+are part of the set (the `a` above). This leads us to a tree:
+
+~~~haskell
+data FreeMagma a = Var a
+                 | Tree (FreeMagma a) (FreeMagma a)
+instance Magma (FreeMagma a) where
+    o = Tree
+~~~
+
+So the idea is that we're combining two subexpressions (which could be just
+`Var a`, of course) and that's it. The *structure* embodies the operation that
+we're interested in. I don't want to recapitulate the talk, but here's one
+last slide. We can kinda crawl the structure that we've set up in order to
+evaluate the free magma:
+
+~~~haskell
+interpretMagma :: Magma b => (a -> b) -> (FreeMagma a -> b)
+interpretMagma f (Var a) = f a
+interpretMagma f (Tree a b) = interpretMagma f a `o` interpretMagma f b
+~~~
+
+Evaluating this thing is really just replacing the structure with elements of
+our choosing according to some rule.
+
+The talk goes on (and the plot thickens!) by moving into free monoids and
+then, free monads. It was a great introduction!
+
+## Saturday
+
+Saturday I was able to attend part of the [Yesod](http://yesodweb.com/) class
+(and I'm already a little familiar with Yesod), so the introduction was mostly
+things I've covered on my own. As an aside, I was *scheduled* for the Lens
+class and I say scheduled because BayHac was *very* popular and classes were
+randomly assigned based up on interest and space. Most classes were packed.
+
+The lens introduction by Shachaf Ben-Kiki was great. I've been reading up on
+these a lot lately so for me the ground had been prepared in just the right
+way for me to get a lot out of this. Shachaf moved at a brisk pace, whether
+through practice or sheer type-signature-fu, he hammered out types and
+definitions for things like lenses and traversals about as fast as I type
+prose. This class really lit a bulb for me about why the types work the way
+that they do for lenses. My very hand-wavey summary of this was that a lens is
+like having a writer monad "logging" the parts of some structure you're
+interested in walking over. But rather than being interested in the *value*
+that the writer produces it's the *log* that you want.
+
+*Caution, the following is based on my own emerging understanding of Lenses.
+Please pardon any errors (and I welcome corrections).*
+
+What started to make sense for me was the connection between
+[over](https://hackage.haskell.org/package/lens-4.1.2/docs/Control-Lens-Setter.html#v:over),
+[traverse](http://hackage.haskell.org/package/base-4.7.0.0/docs/Data-Traversable.html#v:traverse), and [Lens](http://hackage.haskell.org/package/lens-4.1.2.1/docs/Control-Lens-Lens.html#t:Lens).
+
+First, looking at traverse, which has the type:
+
+~~~haskell
+traverse
+  :: (Traversable t, Applicative f) => (a -> f b) -> t a -> f (t b)
+~~~
+
+you can think of it as a sort of generalized
+[map](http://hackage.haskell.org/package/base-4.7.0.0/docs/Data-List.html#v:map)
+(I do). We know the `f` above is a Functor because:
+
+~~~haskell
+class Functor f => Applicative f where ...
+~~~
+
+So, picking a simple Functor, say the
+[Identity](http://hackage.haskell.org/package/transformers-0.4.1.0/docs/Data-Functor-Identity.html#t:Identity)
+Functor, you can write something like map:
+
+~~~haskell
+map' :: Traversable t => (a -> b) -> t a -> t b
+map' f = runIdentity . traverse (Identity . f)
+~~~
+
+notice how we're sort of "packaging" up the result of the function in a dummy
+Functor (`runIdentity . Identity == id`), which we then immediately discard.
+This is exactly the sort of sleight of hand that we need for Lens:
+
+~~~haskell
+type Lens s t a b = forall f. Functor f => (a -> f b) -> s -> f t
+~~~
+
+Notice how the
+[view](https://hackage.haskell.org/package/lens-4.1.2/docs/Control-Lens-Getter.html#v:view)
+function does something really similar:
+
+~~~haskell
+view :: MonadReader s m => Getting a s a -> m a
+-- re-written with definition of Getting
+view :: MonadReader s m => (a -> Const a a) -> s -> Const a s -> m a
+~~~
+
+Const is similar to `Identity` in that it has a "weird" definition:
+
+~~~haskell
+instance Functor (Const m) where
+    fmap _ (Const v) = Const v    -- the function doesn't matter!
+~~~
+
+putting that all together (and I'm still a bit fuzzy on how the types work out
+on these) gives you something that takes a Lens of some structure but then
+*ignores* that structure (the `s` in the `Const a s`). So you're getting your
+structure with the value picked out, but then ignoring the structure (and
+leaving just the value you're interested in).
+
+That's really handwavey, but here's an example:
+
+~~~haskell
+data Person = Person { fn :: String , ln :: String }
+-- e.g. fn (Person "Chris" "Wilson") == "Chris")
+~~~
+
+Now I can make a `Lens` of `fn` by specifying my own getter and setter
+functions:
+
+~~~haskell
+fnLens = lens fn (\(Person a b) v -> Person v b)
+~~~
+
+Now I can use that to access the `Person` structure:
+
+~~~haskell
+view fnLens (Person "Chris" "Wilson")
+-- "Chris"
+~~~
+
+And the type would be something like:
+
+~~~
+view   :: (a -> Const a a)                -- as above
+       -> s
+       -> Const a s
+       -> m a
+
+fnLens :: (String -> Const String String) -- subbing in types
+       -> Person
+       -> Const String Person
+
+view fnLens :: MonadReader Person m => m String
+~~~
+
+The above type signature is a bit wonky, but I think it captures what's
+happening as the types unify. So it all boils down to something that extracts
+a `String` from a `Person`. But the intuition that is starting to grow for me
+is that Lenses let you use a carefully-chosen (i.e. `Const`) `Functor` to
+"smuggle" a value out of a bigger structure.
+
+## Sunday
+
+I spent a lot of time on Sunday working on Joe Nelson's
+[haskell-vim-now](https://github.com/begriffs/haskell-vim-now) one-line
+Haskell Vim installer. Lots of people were excited about the prospect of
+having an easy-to-install Vim mode. I think that this has made a lot of
+progress. If you like Vim and want to do Haskell development, go install it
+now. If you want to just install it here, just run this:
+
+~~~bash
+curl -o - https://raw.githubusercontent.com/begriffs/haskell-vim-now/master/install.sh | sh
+~~~
+
+But please see the
+[README](https://github.com/begriffs/haskell-vim-now/blob/master/README.md)
+for keybindings and general tips on use. Also, if there is anything that you'd
+  like to see included or revised, you are [invited to submit an
+  issue](https://github.com/begriffs/haskell-vim-now/issues).
+
+I also spent some time talking with the
+[Snowdrift.coop](https://snowdrift.coop) developers. This is a funding
+platform that seeks to crowdfund ongoing Free/Libre/Open Source projects. They
+have a nice [intro](https://snowdrift.coop/p/snowdrift/w/intro). The Haskell
+angle here is that this is a Yesod app: source [on
+Github](https://github.com/dlthomas/snowdrift) and [on
+Gitorious](https://gitorious.org/snowdrift/snowdrift/source/6b587c9c176aa24917c7403dbadd3778e17d08b4:).
+
+## Summary
+
+BayHac was a great experince! I got to meet with a bunch of people that I had
+only been following online so far. And I think it really fired me up to write
+more production Haskell. I'm even looking for ways to integrate it into
+Bendyworks' development.
