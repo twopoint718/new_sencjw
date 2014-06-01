@@ -3,7 +3,7 @@
 ## Bridging the Chasm in Web Development
 
 *The Transparent Web* (working title) is a book that I'm writing about some
-The "next-generation" web frameworks that seek to abstract away repetitive,
+"next-generation" web frameworks that seek to abstract away repetitive,
 *low-level* details of web applications. Whether those details are separate
 client/server components or all the HTML/CSS/JS needed for a pleasing
 user-interface, The Transparent Web will show you how you can write simpler,
