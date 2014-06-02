@@ -197,7 +197,7 @@ progress. If you like Vim and want to do Haskell development, go install it
 now. If you want to just install it here, just run this:
 
 ~~~bash
-curl -o - https://raw.githubusercontent.com/begriffs/haskell-vim-now/master/install.sh | sh
+curl -o - https://raw.githubusercontent.com/begriffs/haskell-vim-now/master/install.sh | bash
 ~~~
 
 But please see the
