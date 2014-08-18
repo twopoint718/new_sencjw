@@ -21,3 +21,4 @@ Most items are in PDF format.
  * [Rc - The Plan 9 Shell](/talks/rc_shell.pdf) - MadLUG meetup
  * [Transparent Web, The](/talks/transparent_web_barcamp.pdf) - BarCamp Madison
  * [Transparent Web, The](/talks/transparent_web_madjs.pdf) - MadJS meetup
+ * [Writing code that I'm not smart enough to write](/talks/not_smart_enough_to_write.pdf) - Bendyworks internal talk (T3)
