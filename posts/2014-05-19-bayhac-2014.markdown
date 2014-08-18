@@ -30,21 +30,21 @@ speech](https://docs.google.com/file/d/0B51SFgxqMDS-NDBOX0ZDdW52dEE/edit)
 first starting with an algebraic structure called a *magma*, which is simply a
 single, closed binary operation on a set:
 
-~~~haskell
+```haskell
 class Magma where
     o :: a -> a -> a
-~~~
+```
 
 Next he suggested the idea of the "least special magma." We want to capture
 the idea that we can do this binary operation, and that we have things that
 are part of the set (the `a` above). This leads us to a tree:
 
-~~~haskell
+```haskell
 data FreeMagma a = Var a
                  | Tree (FreeMagma a) (FreeMagma a)
 instance Magma (FreeMagma a) where
     o = Tree
-~~~
+```
 
 So the idea is that we're combining two subexpressions (which could be just
 `Var a`, of course) and that's it. The *structure* embodies the operation that
@@ -52,11 +52,11 @@ we're interested in. I don't want to recapitulate the talk, but here's one
 last slide. We can kinda crawl the structure that we've set up in order to
 evaluate the free magma:
 
-~~~haskell
+```haskell
 interpretMagma :: Magma b => (a -> b) -> (FreeMagma a -> b)
 interpretMagma f (Var a) = f a
 interpretMagma f (Tree a b) = interpretMagma f a `o` interpretMagma f b
-~~~
+```
 
 Evaluating this thing is really just replacing the structure with elements of
 our choosing according to some rule.
@@ -92,52 +92,53 @@ What started to make sense for me was the connection between
 
 First, looking at traverse, which has the type:
 
-~~~haskell
+```haskell
 traverse
   :: (Traversable t, Applicative f) => (a -> f b) -> t a -> f (t b)
-~~~
+```
 
 you can think of it as a sort of generalized
 [map](http://hackage.haskell.org/package/base-4.7.0.0/docs/Data-List.html#v:map)
 (I do). We know the `f` above is a Functor because:
 
-~~~haskell
+```haskell
 class Functor f => Applicative f where ...
-~~~
+```
 
-So, picking a simple Functor, say the
+So, picking an Applicative, say the
 [Identity](http://hackage.haskell.org/package/transformers-0.4.1.0/docs/Data-Functor-Identity.html#t:Identity)
-Functor, you can write something like map:
+Applicative, you can write something like map:
 
-~~~haskell
+```haskell
 map' :: Traversable t => (a -> b) -> t a -> t b
 map' f = runIdentity . traverse (Identity . f)
-~~~
+```
 
-notice how we're sort of "packaging" up the result of the function in a dummy
-Functor (`runIdentity . Identity == id`), which we then immediately discard.
-This is exactly the sort of sleight of hand that we need for Lens:
+notice how we're sort of "packaging" up the result of the function in a
+dummy Applicative (`runIdentity . Identity == id`), which we then
+immediately discard.  This is exactly the sort of sleight of hand that we
+need for Lens:
 
-~~~haskell
+```haskell
 type Lens s t a b = forall f. Functor f => (a -> f b) -> s -> f t
-~~~
+```
 
 Notice how the
 [view](https://hackage.haskell.org/package/lens-4.1.2/docs/Control-Lens-Getter.html#v:view)
 function does something really similar:
 
-~~~haskell
+```haskell
 view :: MonadReader s m => Getting a s a -> m a
 -- re-written with definition of Getting
 view :: MonadReader s m => (a -> Const a a) -> s -> Const a s -> m a
-~~~
+```
 
-Const is similar to `Identity` in that it has a "weird" definition:
+`Const` is similar to `Identity` in that it has a "weird" definition:
 
-~~~haskell
+```haskell
 instance Functor (Const m) where
     fmap _ (Const v) = Const v    -- the function doesn't matter!
-~~~
+``
 
 putting that all together (and I'm still a bit fuzzy on how the types work out
 on these) gives you something that takes a Lens of some structure but then
@@ -147,28 +148,28 @@ leaving just the value you're interested in).
 
 That's really handwavey, but here's an example:
 
-~~~haskell
+```haskell
 data Person = Person { fn :: String , ln :: String }
 -- e.g. fn (Person "Chris" "Wilson") == "Chris")
-~~~
+```
 
 Now I can make a `Lens` of `fn` by specifying my own getter and setter
 functions:
 
-~~~haskell
+```haskell
 fnLens = lens fn (\(Person a b) v -> Person v b)
-~~~
+```
 
 Now I can use that to access the `Person` structure:
 
-~~~haskell
+```haskell
 view fnLens (Person "Chris" "Wilson")
 -- "Chris"
-~~~
+```
 
 And the type would be something like:
 
-~~~
+```
 view   :: (a -> Const a a)                -- as above
        -> s
        -> Const a s
@@ -179,7 +180,7 @@ fnLens :: (String -> Const String String) -- subbing in types
        -> Const String Person
 
 view fnLens :: MonadReader Person m => m String
-~~~
+```
 
 The above type signature is a bit wonky, but I think it captures what's
 happening as the types unify. So it all boils down to something that extracts
@@ -196,9 +197,9 @@ having an easy-to-install Vim mode. I think that this has made a lot of
 progress. If you like Vim and want to do Haskell development, go install it
 now. If you want to just install it here, just run this:
 
-~~~bash
+```bash
 curl -o - https://raw.githubusercontent.com/begriffs/haskell-vim-now/master/install.sh | bash
-~~~
+```
 
 But please see the
 [README](https://github.com/begriffs/haskell-vim-now/blob/master/README.md)
