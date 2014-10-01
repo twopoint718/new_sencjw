@@ -7,6 +7,7 @@ love to chat. [Drop me a line](/contact.html).
 Most items are in PDF format.
 
  * [AngularJS](/talks/angularjs.pdf) - MadJS meetup
+ * [BendyConf: A Paean To Plain Text](http://bendyworks.com/bendyconf-a-paean-to-plain-text/) - Bendyworks internal conference
  * [From Ruby to Haskell Workshop](https://www.fpcomplete.com/user/twopoint718/from-ruby-to-haskell-workshop)
    and [slides](/talks/ruby_to_haskell.pdf) - Twin Cities Code Camp
  * [Functional Programming](/talks/functional_programming.pdf) - Bendyworks internal conference
