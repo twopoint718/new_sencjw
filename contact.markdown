@@ -4,7 +4,6 @@
 
  * Twitter: @[twopoint718](http://twitter.com/twopoint718)
  * IRC twopoint718 (IRC <http://freenode.net>)
- * MadLUG President Madison Linux User Group [Meetup.com page](http://www.meetup.com/madlug/)
  * Mail: <chris@sencjw.com> or <chris@bendyworks.com>
  * XMPP <chris@sencjw.com>
 
