@@ -46,10 +46,10 @@ developed my own palette of designs and code to accomplish most tasks. I
 can act as a [linker][4], assembling only those functions that are needed
 to accomplish the task at hand.
 
-1: http://tom.lokhorst.eu/2010/09/why-libraries-are-better-than-frameworks
-2: http://discuss.joelonsoftware.com/default.asp?joel.3.219431.12&
-3: http://blog.orderharmony.com/2011/07/libraries-vs-frameworks.html
-4: http://en.wikipedia.org/wiki/Linker_(computing)#Static_linking
+[1]: http://tom.lokhorst.eu/2010/09/why-libraries-are-better-than-frameworks
+[2]: http://discuss.joelonsoftware.com/default.asp?joel.3.219431.12&
+[3]: http://blog.orderharmony.com/2011/07/libraries-vs-frameworks.html
+[4]: http://en.wikipedia.org/wiki/Linker_(computing)#Static_linking
 
 Lastly, I worry that time and brainpower that I pour into frameworks goes
 unrewarded. When I don't want to use a framework, the framework changes, or
