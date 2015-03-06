@@ -20,6 +20,7 @@ Most items are in PDF format.
  * [On Beauty](/talks/on_beauty.html) - Bendyworks internal conference
  * [Once Upon a Time at the MIT AI Lab](/talks/once_upon_a_time_at_mit_ai_lab.pdf) - Bendyworks internal conference
  * [Rc - The Plan 9 Shell](/talks/rc_shell.pdf) - MadLUG meetup
+ * [Relations > SQL > ORM](/talks/relations.pdf) - Bendyworks internal talk (T3)
  * [Transparent Web, The](/talks/transparent_web_barcamp.pdf) - BarCamp Madison
  * [Transparent Web, The](/talks/transparent_web_madjs.pdf) - MadJS meetup
  * [Writing code that I'm not smart enough to write](/talks/not_smart_enough_to_write.pdf) - Bendyworks internal talk (T3)
