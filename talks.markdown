@@ -23,4 +23,7 @@ Most items are in PDF format.
  * [Relations > SQL > ORM](/talks/relations.pdf) - Bendyworks internal talk (T3)
  * [Transparent Web, The](/talks/transparent_web_barcamp.pdf) - BarCamp Madison
  * [Transparent Web, The](/talks/transparent_web_madjs.pdf) - MadJS meetup
+ * [Transparent Web, The - The Future of Web Development Looks
+   Functional](/talks/tccc_spring_2015.pdf) - Twin Cities Code Camp 18 (Spring
+   2015)
  * [Writing code that I'm not smart enough to write](/talks/not_smart_enough_to_write.pdf) - Bendyworks internal talk (T3)
