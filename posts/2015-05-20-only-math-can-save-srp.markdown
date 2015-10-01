@@ -42,7 +42,19 @@ The key property is that for each collection and element you can ask "is this el
 In fact, this notion of *collection* is what *defines* a set.
 _Standard disclaimers apply, I’m not a mathemetician and this handwavy explantion would likely get you laughed out of any math gang that you might be a part of._
 
-TODO: build up semigroup, monoid maybe?
+### Putting Things Together
+
+Programming’s heart and soul is repetition.
+From the earliest days of electro-mechanical computing, humans created machines that could grind through tedious tasks.
+It went without saying that it was the repetition, in steps, or in raw numbers that made these tasks deadly boring.
+In steps the machine and we just describe the steps, letting the  mindless machine step through the busywork.
+
+Even today, the kinds of tasks we want computers to work on tend toward vast amalgamations of similar _things_.
+If our tasks were just one-off, maybe we wouldn’t even bother writing programs.
+
+So it is often the case that we want to aggregate things
+
+$\xor$
 
 ## Back to Programming
 
