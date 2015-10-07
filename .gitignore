@@ -11,3 +11,4 @@ posts.yaml
 site
 cabal.sandbox.config
 dist
+.stack-work/
