@@ -52,9 +52,9 @@ In steps the machine and we just describe the steps, letting the  mindless machi
 Even today, the kinds of tasks we want computers to work on tend toward vast amalgamations of similar _things_.
 If our tasks were just one-off, maybe we wouldn’t even bother writing programs.
 
-So it is often the case that we want to aggregate things
+So it is often the case that we want to aggregate things:
 
-$\xor$
+$$thing_1 \oplus thing_2 \oplus thing_3$$
 
 ## Back to Programming
 
