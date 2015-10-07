@@ -2,8 +2,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
+import           Hakyll.Web.Pandoc
 import           Data.Maybe (fromMaybe)
 import qualified Data.Map as M
+import qualified Data.Set as S
+import           Text.Pandoc.Options
 
 
 --------------------------------------------------------------------------------
@@ -31,14 +34,14 @@ main = hakyll $ do
                     , "transparent_web.markdown"
                     ]) $ do
         route   $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocMathCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
 
     -- blog posts
     match "posts/*" $ do
         route $ setExtension "html"
-        compile $ pandocCompiler
+        compile $ pandocMathCompiler
             >>= loadAndApplyTemplate "templates/post.html"    postCtx
             >>= saveSnapshot "content"
             >>= loadAndApplyTemplate "templates/default.html" postCtx
@@ -128,3 +131,16 @@ sencjwFeedConfiguration = FeedConfiguration
     , feedAuthorEmail = "chris@sencjw.com"
     , feedRoot        = "http://sencjw.com"
     }
+
+pandocMathCompiler =
+  let mathExtensions = [ Ext_tex_math_dollars
+                       , Ext_tex_math_double_backslash
+                       , Ext_latex_macros
+                       ]
+      defaultExtensions = writerExtensions defaultHakyllWriterOptions
+      newExtensions = foldr S.insert defaultExtensions mathExtensions
+      writerOptions = defaultHakyllWriterOptions
+        { writerExtensions = newExtensions
+        , writerHTMLMathMethod = MathJax ""
+        }
+   in pandocCompilerWith defaultHakyllReaderOptions writerOptions
