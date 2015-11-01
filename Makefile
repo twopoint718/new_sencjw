@@ -1,7 +1,4 @@
-site: site.hs
-	stack build
-
-build: site
+build:
 	stack exec sencjw build
 
 publish: build

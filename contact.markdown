@@ -4,7 +4,7 @@
 
  * Twitter: @[twopoint718](http://twitter.com/twopoint718)
  * IRC twopoint718 (IRC <http://freenode.net>)
- * Mail: <chris@sencjw.com> or <chris@bendyworks.com>
+ * Mail: <chris@sencjw.com> or <christopher.j.wilson@gmail.com>
  * XMPP <chris@sencjw.com>
 
 ## PGP Public Key
