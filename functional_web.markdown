@@ -23,6 +23,7 @@ Languages like Rust (Mozilla), Swift (Apple), and F# (Microsoft) suggest that bi
 
 If you are a web developer and are curious about what all this _functional noise_ is about, then you should check this book out!
 
+
 ### Frameworks
 
  * [Meteor](https://www.meteor.com/)
@@ -30,15 +31,15 @@ If you are a web developer and are curious about what all this _functional noise
  * [Haskell](https://www.haskell.org/)
  * [Elm](http://elm-lang.org/)
 
+
 ### Presentations
 
 Please see [talks](talks.html) for a list of all the talks I've given.
 Many were under a working title, _The Transparent Web_.
 
+
 ### The Book
 
-*Update* **The Functional Web** is now a real tree-and-glue book.
-
-The book is forthcoming from [Manning Publications](http://manning.com/) next year.
+_The Functional Web_ is forthcoming from [Manning Publications](http://manning.com/) next year.
 Stay tuned if you're interested in checking it out early on [MEAP](http://manning.com/about/meap).
 I'll be sure to provide all the details you need.
