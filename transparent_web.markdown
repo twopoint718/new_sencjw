@@ -40,4 +40,4 @@ Please see [talks](talks.html) for a list of all the talks I've given.
 
 ### The Book
 
-**Update 6/2016**: _The Transparent Web_ is now available as a MEAP (early access book) from [Manning Publications](http://manning.com/)!
+**Update 6/2016**: [The Transparent Web](https://manning.com/books/the-transparent-web) is now available as a MEAP (early access book) from [Manning Publications](http://manning.com/)!
