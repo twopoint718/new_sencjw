@@ -1,9 +1,9 @@
-# The Functional Web
+# The Transparent Web
 
 ## What can the web learn from functional programming?
 
 I've been writing a book!
-*The Functional Web* is my attempt to explore the convergence of functional and web programming.
+*The Transparent Web* is my attempt to explore the convergence of functional and web programming.
 Functional programming has been with us for over 50 years and the web for about half that.
 Clearly, these technologies have coexisted long enough for some _cultural diffusion_ to have happened.
 Yet it seemed to me that the main thrust of web development grew out of the OO tradition.
@@ -26,7 +26,8 @@ If you are a web developer and are curious about what all this _functional noise
 
 ### Frameworks
 
- * [Meteor](https://www.meteor.com/)
+Among other topics, I'll cover:
+
  * [Opa](http://opalang.org/)
  * [Haskell](https://www.haskell.org/)
  * [Elm](http://elm-lang.org/)
@@ -35,11 +36,8 @@ If you are a web developer and are curious about what all this _functional noise
 ### Presentations
 
 Please see [talks](talks.html) for a list of all the talks I've given.
-Many were under a working title, _The Transparent Web_.
 
 
 ### The Book
 
-_The Functional Web_ is forthcoming from [Manning Publications](http://manning.com/) next year.
-Stay tuned if you're interested in checking it out early on [MEAP](http://manning.com/about/meap).
-I'll be sure to provide all the details you need.
+**Update 6/2016**: _The Transparent Web_ is now available as a MEAP (early access book) from [Manning Publications](http://manning.com/)!

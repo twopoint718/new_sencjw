@@ -28,7 +28,7 @@ main = hakyll $ do
                     , "talks.markdown"
                     , "writings.markdown"
                     , "the_square_root_of_christmas.markdown"
-                    , "functional_web.markdown"
+                    , "transparent_web.markdown"
                     ]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
