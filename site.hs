@@ -81,6 +81,11 @@ main = hakyll $ do
         route idRoute
         compile copyFileCompiler
 
+    -- Keybase.io proof for sencjw.com
+    match "keybase.txt" $ do
+        route idRoute
+        compile copyFileCompiler
+
     -- Github thingy for making sencjw.com work
     match "CNAME" $ do
         route idRoute
