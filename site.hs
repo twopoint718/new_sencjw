@@ -1,9 +1,10 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.Monoid (mappend)
+import           Data.Aeson.Types  (Value (String))
+import qualified Data.HashMap.Lazy as M
+import           Data.Monoid       ((<>))
+import qualified Data.Text         as Text
 import           Hakyll
-import           Data.Maybe (fromMaybe)
-import qualified Data.Map as M
 
 
 --------------------------------------------------------------------------------
@@ -49,9 +50,9 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
-                    constField "title" "Archives"            `mappend`
-                    defaultContext
+                    listField "posts" postCtx (return posts)
+                    <> constField "title" "Archives"
+                    <> defaultContext
 
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
@@ -61,7 +62,7 @@ main = hakyll $ do
     create ["atom.xml"] $ do
         route idRoute
         compile $ do
-            let feedCtx = postCtx `mappend` bodyField "description"
+            let feedCtx = postCtx <> bodyField "description"
             posts <- fmap (take 10) . recentFirst =<<
                 loadAllSnapshots "posts/*" "content"
             renderAtom sencjwFeedConfiguration feedCtx posts
@@ -69,7 +70,7 @@ main = hakyll $ do
     create ["feed.rss"] $ do
         route idRoute
         compile $ do
-            let feedCtx = postCtx `mappend` bodyField "description"
+            let feedCtx = postCtx <> bodyField "description"
             posts <- fmap (take 10) . recentFirst =<<
                 loadAllSnapshots "posts/*" "content"
             renderRss sencjwFeedConfiguration feedCtx posts
@@ -101,9 +102,9 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
-                    listField "posts" postCtx (return $ take 5 posts) `mappend`
-                    constField "title" "Home"                `mappend`
-                    defaultContext
+                    listField "posts" postCtx (return $ take 5 posts)
+                    <> constField "title" "Home"
+                    <> defaultContext
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
@@ -114,16 +115,20 @@ main = hakyll $ do
 
 
 --------------------------------------------------------------------------------
-titleCtx :: Context a
+titleCtx :: Context String
 titleCtx = field "title" $ \item -> do
     metadata <- getMetadata (itemIdentifier item)
-    return $ fromMaybe "No title" $ M.lookup "title" metadata
+    let title = case M.lookup "title" metadata of
+          Nothing         -> "No title"
+          Just (String x) -> x
+          Just _          -> "No title"
+    return (Text.unpack title)
 
 postCtx :: Context String
 postCtx =
-    titleCtx                     `mappend`
-    dateField "date" "%B %e, %Y" `mappend`
-    defaultContext
+    titleCtx
+    <> dateField "date" "%B %e, %Y"
+    <> defaultContext
 
 sencjwFeedConfiguration :: FeedConfiguration
 sencjwFeedConfiguration = FeedConfiguration
