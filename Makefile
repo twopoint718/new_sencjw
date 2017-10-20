@@ -1,3 +1,6 @@
+watch:
+	stack exec sencjw -- watch
+
 build:
 	stack exec sencjw build
 
