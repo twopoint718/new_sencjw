@@ -5,6 +5,9 @@ import qualified Data.HashMap.Lazy as M
 import           Data.Monoid       ((<>))
 import qualified Data.Text         as Text
 import           Hakyll
+import           Text.Pandoc       (Block, Pandoc, ReaderOptions, WriterOptions)
+import qualified Text.Pandoc       as Pandoc
+import qualified Text.Pandoc.Walk  as Walk
 
 
 --------------------------------------------------------------------------------
@@ -138,3 +141,31 @@ sencjwFeedConfiguration = FeedConfiguration
     , feedAuthorEmail = "chris@sencjw.com"
     , feedRoot        = "http://sencjw.com"
     }
+
+-- probably really Block -> IO Block
+foo :: Block -> Block
+foo = undefined
+
+thing :: Pandoc -> Pandoc
+thing (Pandoc.Pandoc meta blocks) =
+  Pandoc.Pandoc meta (Walk.walk foo blocks)
+
+-- transformer
+--   :: FilePath       -- e.g. "/absolute/path/filter.py"
+--   -> ReaderOptions  -- e.g.  defaultHakyllReaderOptions
+--   -> WriterOptions  -- e.g.  defaultHakyllWriterOptions
+--   -> (Pandoc -> Compiler Pandoc)
+-- transformer script reader_opts writer_opts pandoc = do
+--     let input_json = Pandoc.writeJSON writer_opts pandoc
+--     output_json <- unixFilter script [] input_json
+--     return $
+--         either (error.show) id $
+--             Pandoc.readJSON reader_opts output_json
+
+-- myCompiler = Hakyll.pandocCompilerWithTransformM
+--     defaultHakyllReaderOptions
+--     defaultHakyllWriterOptions
+--     (transformer
+--         "./.stack-work/install/x86_64-osx/lts-8.13/8.0.2/bin/pandoc-include-code"
+--         defaultHakyllReaderOptions
+--         defaultHakyllWriterOptions)

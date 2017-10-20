@@ -16,6 +16,8 @@ executable sencjw
                     , base >=4.9 && <4.10
                     , containers
                     , hakyll
+                    , pandoc
+                    , pandoc-types
                     , text
                     , unordered-containers
   default-language:   Haskell2010
