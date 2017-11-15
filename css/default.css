@@ -98,3 +98,10 @@ article img {
 article header {
   border-bottom: 1px solid gray;
 }
+
+/* For "side" pages like transparent_web.html */
+main figure img {
+  float: right;
+  width: 40%;
+  margin: 15px;
+}

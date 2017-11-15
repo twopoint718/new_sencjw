@@ -2,6 +2,12 @@
 
 ## What can the web learn from functional programming?
 
+<figure>
+  <img
+    src="/images/Wilson-TWeb-MEAP.png"
+    alt="Transparent Web Cover">
+</figure>
+
 I've been writing a book!
 *The Transparent Web* is my attempt to explore the convergence of functional and web programming.
 Functional programming has been with us for over 50 years and the web for about half that.
@@ -24,20 +30,29 @@ Languages like Rust (Mozilla), Swift (Apple), and F# (Microsoft) suggest that bi
 If you are a web developer and are curious about what all this _functional noise_ is about, then you should check this book out!
 
 
-### Frameworks
+### Topics
+
 
 Among other topics, I'll cover:
 
- * [Opa](http://opalang.org/)
- * [Haskell](https://www.haskell.org/)
- * [Elm](http://elm-lang.org/)
+ * *Functional programming*, with examples in multiple languages and contexts.
+   Many examples are given in [TypeScript](http://www.typescriptlang.org/).
+ * [Isomorphic applications](http://isomorphic.net/), which share code between server & client.
+   But this is not limited to only JavaScript!
+ * [Opa](http://opalang.org/), an isomorphic client/server language and framework.
+ * [Haskell](https://www.haskell.org/), demonstrating how to target [WebAssembly](http://webassembly.org/).
+ * [Elm](http://elm-lang.org/), showing off client-side coding.
 
 
 ### Presentations
+
 
 Please see [talks](talks.html) for a list of all the talks I've given.
 
 
 ### The Book
 
-**Update 6/2016**: [The Transparent Web](https://manning.com/books/the-transparent-web) is now available as a MEAP (early access book) from [Manning Publications](http://manning.com/)!
+
+- **Update 11/2017**: All manuscript chapters are available as a MEAP.
+  I'm wrapping up on editing the last two chapters!
+- **Update 6/2016**: [The Transparent Web](https://manning.com/books/the-transparent-web) is now available as a MEAP (early access book) from [Manning Publications](http://manning.com/)!
