@@ -17,6 +17,10 @@ Most items are in PDF format.
  * [Haskell Ecosystem, The](/talks/the_haskell_ecosystem.pdf) - Twin Cities Code Camp (with Erik Rantapaa)
  * [JS is for Functions](/talks/js_is_for_functions.pdf) - Bendyworks internal conference
  * [Let's Build a Particle Accelerator](/talks/accelerators.pdf) - Bendyworks internal conference
+ * [Meetup, Haskallywags Chap 1](/talks/01_introductions.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
+ * [Meetup, Haskallywags Chap 2](/talks/02_all_you_need_is_lambda.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
+ * [Meetup, Haskallywags Chap 3/4](/talks/03_04_strings_basic_datatypes.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
+ * [Meetup, Haskallywags Chap 5](/talks/05_types.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
  * [On Beauty](/talks/on_beauty.html) - Bendyworks internal conference
  * [Once Upon a Time at the MIT AI Lab](/talks/once_upon_a_time_at_mit_ai_lab.pdf) - Bendyworks internal conference
  * [Rc - The Plan 9 Shell](/talks/rc_shell.pdf) - MadLUG meetup
