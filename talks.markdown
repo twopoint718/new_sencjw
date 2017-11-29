@@ -17,10 +17,6 @@ Most items are in PDF format.
  * [Haskell Ecosystem, The](/talks/the_haskell_ecosystem.pdf) - Twin Cities Code Camp (with Erik Rantapaa)
  * [JS is for Functions](/talks/js_is_for_functions.pdf) - Bendyworks internal conference
  * [Let's Build a Particle Accelerator](/talks/accelerators.pdf) - Bendyworks internal conference
- * [Meetup, Haskallywags Chap 1](/talks/01_introductions.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
- * [Meetup, Haskallywags Chap 2](/talks/02_all_you_need_is_lambda.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
- * [Meetup, Haskallywags Chap 3/4](/talks/03_04_strings_basic_datatypes.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
- * [Meetup, Haskallywags Chap 5](/talks/05_types.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
  * [On Beauty](/talks/on_beauty.html) - Bendyworks internal conference
  * [Once Upon a Time at the MIT AI Lab](/talks/once_upon_a_time_at_mit_ai_lab.pdf) - Bendyworks internal conference
  * [Rc - The Plan 9 Shell](/talks/rc_shell.pdf) - MadLUG meetup
@@ -30,3 +26,15 @@ Most items are in PDF format.
  * [Transparent Web, The - The Future of Web Development Looks
    Functional](/talks/tccc_spring_2015.pdf) - Twin Cities Code Camp 18 (Spring 2015)
  * [Writing code that I'm not smart enough to write](/talks/not_smart_enough_to_write.pdf) - Bendyworks internal talk (T3)
+
+## Haskallywags Meetup
+
+A weekly [meetup group](https://www.meetup.com/Haskallywags/) where we go through [Haskell Programming: from first principles](http://haskellbook.com).
+We started on October 10, 2017.
+
+ * [Chap 1](/talks/01_introductions.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
+ * [Chap 2](/talks/02_all_you_need_is_lambda.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
+ * [Chap 3/4](/talks/03_04_strings_basic_datatypes.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
+ * [Chap 5](/talks/05_types.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
+ *  Chap 6 (no slides) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
+ * [Chap 7](/talks/07_more_functional_patterns.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
