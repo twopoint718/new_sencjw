@@ -24,14 +24,14 @@ a {
 }
 
 pre {
-  background: #eee;
-  padding: 4px;
+  background: #fffcf5; /* very close to Solarized's "base3" */
+  padding: 25px;
   border-radius: 5px;
 }
 
 pre code {
   font-family: Monaco, monospace;
-  font-size: 12pt;
+  font-size: 11pt;
 }
 
 p code {
@@ -94,6 +94,15 @@ nav li:last-child {
 main {
   width: 760px;
   float: left;
+}
+
+/*
+ * MAIN/ARTICLE STYLES
+ *
+ */
+
+article blockquote {
+  font-style: italic;
 }
 
 article img {
