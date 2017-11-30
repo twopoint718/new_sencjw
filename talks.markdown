@@ -32,9 +32,24 @@ Most items are in PDF format.
 A weekly [meetup group](https://www.meetup.com/Haskallywags/) where we go through [Haskell Programming: from first principles](http://haskellbook.com).
 We started on October 10, 2017.
 
- * [Chap 1](/talks/01_introductions.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
- * [Chap 2](/talks/02_all_you_need_is_lambda.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
- * [Chap 3/4](/talks/03_04_strings_basic_datatypes.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
- * [Chap 5](/talks/05_types.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
- *  Chap 6 (no slides) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
- * [Chap 7](/talks/07_more_functional_patterns.pdf) - Weekly Haskell Meetup [HP:FFP](http://haskellbook.com/)
+ * 10/10/17 Introductory meetup (no slides)
+ * 10/17/17 [Chap 1](/talks/01_introductions.pdf)
+ * 10/24/17 [Chap 2](/talks/02_all_you_need_is_lambda.pdf)
+ * 11/07/17 [Chap 3/4](/talks/03_04_strings_basic_datatypes.pdf)
+ * 11/14/17 [Chap 5](/talks/05_types.pdf)
+ * 11/21/17  Chap 6 (no slides)
+ * 11/28/17 [Chap 7](/talks/07_more_functional_patterns.pdf)
+ * 12/05/17  Chap 8
+ * 12/12/17  Chap 9
+ * 12/19/17  Chap 10
+ * 01/02/18  Chap 11
+
+### Tentatively planned
+
+ * 01/09/18 Chap 12
+ * 01/16/18 Chap 13
+ * 01/23/18 Chap 14
+ * 01/30/18 Chap 15
+ * 02/06/18 Chap 16
+ * 02/13/18 Chap 17
+ * 02/20/18 Chap 18 (end)
