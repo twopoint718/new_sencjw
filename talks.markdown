@@ -43,13 +43,9 @@ We started on October 10, 2017.
  * 12/12/17  Chap 9
  * 12/19/17  Chap 10
  * 01/02/18  Chap 11
-
-### Tentatively planned
-
- * 01/09/18 Chap 12
- * 01/16/18 Chap 13
- * 01/23/18 Chap 14
- * 01/30/18 Chap 15
- * 02/06/18 Chap 16
- * 02/13/18 Chap 17
- * 02/20/18 Chap 18 (end)
+ * 01/09/18  Chap 12
+ * 01/23/18  Chap 13 & 14
+ * 01/30/18  Chap 15
+ * 02/06/18  Chap 16
+ * 02/13/18  Chap 17
+ * 02/20/18  Chap 18 (end)
