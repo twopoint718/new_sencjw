@@ -2,10 +2,14 @@
 
 ## What can the web learn from functional programming?
 
+[Get the book!](https://www.manning.com/books/the-transparent-web?a_aid=transparentweb&a_bid=40bf85fd)
+
 <figure>
-  <img
-    src="/images/Wilson-TWeb-MEAP.png"
-    alt="Transparent Web Cover">
+  <a href="https://www.manning.com/books/the-transparent-web?a_aid=transparentweb&a_bid=40bf85fd">
+	<img
+		src="/images/Wilson-TWeb-MEAP.png"
+		alt="Transparent Web Cover">
+  </a>
 </figure>
 
 I've been writing a book!
