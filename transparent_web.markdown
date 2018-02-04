@@ -56,7 +56,50 @@ Please see [talks](talks.html) for a list of all the talks I've given.
 
 ### The Book
 
-
+- **Update 1/2018**: All edits are in (and the MEAP has been updated).
+  The book should be published by 3/2018 unless otherwise noted.
+  Thanks for following along!
 - **Update 11/2017**: All manuscript chapters are available as a MEAP.
   I'm wrapping up on editing the last two chapters!
 - **Update 6/2016**: [The Transparent Web](https://manning.com/books/the-transparent-web) is now available as a MEAP (early access book) from [Manning Publications](http://manning.com/)!
+
+### Citation
+
+<a class="copy-bibtex" href="">Copy to clipboard</a>
+
+<textarea class="sourceCode bibtex" style="width: 100%; height: 180px">
+\@book{wilson2018,&#10;
+&nbsp;&nbsp;&nbsp;&nbsp;title = {The Transparent Web},&#10;
+&nbsp;&nbsp;&nbsp;&nbsp;subtitle = {Functional, Reactive, Isomorphic},&#10;
+&nbsp;&nbsp;&nbsp;&nbsp;author = {Wilson, Christopher J.},&#10;
+&nbsp;&nbsp;&nbsp;&nbsp;year = {2018},&#10;
+&nbsp;&nbsp;&nbsp;&nbsp;publisher = {Manning Publications},&#10;
+&nbsp;&nbsp;&nbsp;&nbsp;isbn = {9781633430013}&#10;
+}
+</textarea>
+
+<script>
+    var code = document.querySelector('textarea.sourceCode.bibtex');
+    var copyLink = document.querySelector('a.copy-bibtex');
+    copyLink.addEventListener('click', function(evt) {
+        evt.preventDefault();
+        code.select();
+        try {
+            var successful = document.execCommand('copy');
+            if (successful) {
+                copyLink.innerHTML = 'copied';
+            } else {
+                copyLink.innerHTML = 'could not copy';
+            }
+        } catch (err) {
+            copyLink.innerHTML = 'error, could not copy';
+        }
+        window.setTimeout(function() {
+                copyLink.innerHTML = 'Copy to clipboard';
+            },
+            1000
+        );
+    });
+</script>
+
+Thanks for the citation!
