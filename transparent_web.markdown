@@ -2,15 +2,8 @@
 
 ## What can the web learn from functional programming?
 
-[Get the book!](https://www.manning.com/books/the-transparent-web?a_aid=transparentweb&a_bid=40bf85fd)
-
-<figure>
-  <a href="https://www.manning.com/books/the-transparent-web?a_aid=transparentweb&a_bid=40bf85fd">
-	<img
-		src="/images/Wilson-TWeb-MEAP.png"
-		alt="Transparent Web Cover">
-  </a>
-</figure>
+<script src="https://gumroad.com/js/gumroad-embed.js"></script>
+<div class="gumroad-product-embed" data-gumroad-product-id="tlqAa" data-outbound-embed="true"><a href="https://gumroad.com/l/tlqAa">Loading...</a></div>
 
 I've been writing a book!
 *The Transparent Web* is my attempt to explore the convergence of functional and web programming.
@@ -61,45 +54,7 @@ Please see [talks](talks.html) for a list of all the talks I've given.
   Thanks for following along!
 - **Update 11/2017**: All manuscript chapters are available as a MEAP.
   I'm wrapping up on editing the last two chapters!
-- **Update 6/2016**: [The Transparent Web](https://manning.com/books/the-transparent-web) is now available as a MEAP (early access book) from [Manning Publications](http://manning.com/)!
+- **Update 8/2018**: The Transparent Web is available as an ebook!
 
-### Citation
-
-<a class="copy-bibtex" href="">Copy to clipboard</a>
-
-<textarea class="sourceCode bibtex" style="width: 100%; height: 180px">
-\@book{wilson2018,&#10;
-&nbsp;&nbsp;&nbsp;&nbsp;title = {The Transparent Web},&#10;
-&nbsp;&nbsp;&nbsp;&nbsp;subtitle = {Functional, Reactive, Isomorphic},&#10;
-&nbsp;&nbsp;&nbsp;&nbsp;author = {Wilson, Christopher J.},&#10;
-&nbsp;&nbsp;&nbsp;&nbsp;year = {2018},&#10;
-&nbsp;&nbsp;&nbsp;&nbsp;publisher = {Manning Publications},&#10;
-&nbsp;&nbsp;&nbsp;&nbsp;isbn = {9781633430013}&#10;
-}
-</textarea>
-
-<script>
-    var code = document.querySelector('textarea.sourceCode.bibtex');
-    var copyLink = document.querySelector('a.copy-bibtex');
-    copyLink.addEventListener('click', function(evt) {
-        evt.preventDefault();
-        code.select();
-        try {
-            var successful = document.execCommand('copy');
-            if (successful) {
-                copyLink.innerHTML = 'copied';
-            } else {
-                copyLink.innerHTML = 'could not copy';
-            }
-        } catch (err) {
-            copyLink.innerHTML = 'error, could not copy';
-        }
-        window.setTimeout(function() {
-                copyLink.innerHTML = 'Copy to clipboard';
-            },
-            1000
-        );
-    });
-</script>
-
-Thanks for the citation!
+<script src="https://gumroad.com/js/gumroad.js"></script>
+<a class="gumroad-button" href="https://gum.co/tlqAa" target="_blank">The Transparent Web</a>
