@@ -13,3 +13,4 @@ cabal.sandbox.config
 dist
 .stack-work/
 TAGS
+.DS_Store
