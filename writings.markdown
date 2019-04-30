@@ -5,6 +5,9 @@ collected a list of those here. Many are invited guest author posts or are from
 Bendyworks' blog. If you've liked what I've said so far, then go check these
 out:
 
+* [X Marks the Spot](https://8thlight.com/blog/tags/reason.html):
+  A three-part series on why application programmers should consider using [ReasonML](https://reasonml.github.io) for business apps.
+  There's a focus on how ReasonReact is a better ReactJS experience than ReactJS is -- due to features like static types and named parameters.
 * [Applicative Validation - or - Rails Validation Considered
   Weird](http://www.functionalruby.com/blog/2013/08/17/applicative-validation-or-rails-validation-considered-weird/):
   written for "Functional Ruby." An article where I imagine what Rails would
