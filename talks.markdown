@@ -26,6 +26,7 @@ Most items are in PDF format.
 - [Transparent Web, The - The Future of Web Development Looks
   Functional](/talks/tccc_spring_2015.pdf) - Twin Cities Code Camp 18 (Spring 2015)
 - [Writing code that I'm not smart enough to write](/talks/not_smart_enough_to_write.pdf) - Bendyworks internal talk (T3)
+- [Why Embedded and The Internet of Things Is Interesting (to 8th Light)](/talks/why_iot_and_embedded_are_interesting.pdf) - 2019-11-15 8th Light University
 - ["X" Marks the Spot - ReasonML & ReasonReact (video)](https://zoom.us/recording/share/ettdp8Vtr9PddK87QtIoxwLbOfppbZFTAi3gkEr6O8ewIumekTziMw)
   [(abstract)](https://www.meetup.com/8th-light-university/events/252704494) - 2018-07-27 Chicago, IL at 8th Light University.
 - ["X" Marks the Spot - ReasonML & ReasonReact (slides)](/talks/x_marks_the_spot.pdf) - 2018-11-30 Byteconf Reason conference.
