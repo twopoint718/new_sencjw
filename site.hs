@@ -121,11 +121,9 @@ main = hakyll $ do
 titleCtx :: Context String
 titleCtx = field "title" $ \item -> do
     metadata <- getMetadata (itemIdentifier item)
-    let title = case M.lookup "title" metadata of
-          Nothing         -> "No title"
-          Just (String x) -> x
-          Just _          -> "No title"
-    return (Text.unpack title)
+    return $ case lookupString "title" metadata of
+        Nothing  -> "No title"
+        Just x   -> x
 
 postCtx :: Context String
 postCtx =

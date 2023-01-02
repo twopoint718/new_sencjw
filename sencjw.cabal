@@ -13,7 +13,7 @@ cabal-version:      >=1.10
 executable sencjw
   main-is:            site.hs
   build-depends:      aeson
-                    , base >=4.11 && <4.12
+                    , base
                     , containers
                     , hakyll
                     , pandoc
