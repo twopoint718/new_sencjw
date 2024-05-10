@@ -13,11 +13,8 @@ build: $(post_htmls)
 
 $(TARGET)/posts/%.html: posts/%.markdown $(TARGET) $(POSTS_DIR)
 	$(MC) $(MC_FLAGS) $< > $@.tmp
-	sed -e "s/TITLE/Sometitle/"                 \
-		-e "s/DATE/`date -I | tr -d "\n"`/" \
-		-e "s/AUTHOR/Christopher Wilson/"   \
-		-e "/BODY/r `basename $@.tmp`"      \
-		templates/post.html > $@
+	src/mkpost.sh $< $@.tmp $@
+	rm $@.tmp
 
 $(TARGET):
 	mkdir $(TARGET)
